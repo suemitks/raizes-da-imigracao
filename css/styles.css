@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --bege: #F7F1E8;
+    --bege-claro: #FFFDF9;
+    --terracota: #A6533D;
+    --terracota-escuro: #7E3D2E;
+    --marrom: #44352D;
+    --texto-secundario: #796B61;
+    --borda: #E8DDD0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--bege-claro);
+    color: var(--marrom);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 88px 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--texto-secundario);
+}
+
+/* Cabeçalho */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 253, 249, 0.96);
+    border-bottom: 1px solid var(--borda);
+}
+
+.header-content {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--marrom);
+    font-weight: 700;
+}
+
+.logo-symbol {
+    color: var(--terracota);
+    font-size: 1.8rem;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav a:hover {
+    color: var(--terracota);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: none;
+    color: var(--marrom);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Destaque inicial */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(48, 35, 28, 0.83), rgba(48, 35, 28, 0.25)),
+        url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1800&q=85') center 48% / cover;
+    color: white;
+}
+
+.hero-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.hero-text {
+    max-width: 700px;
+}
+
+.hero h1 {
+    margin: 18px 0 22px;
+}
+
+.hero p {
+    max-width: 590px;
+    color: #F6EDE5;
+    font-size: 1.08rem;
+    margin-bottom: 32px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--terracota);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero .eyebrow,
+.memory .eyebrow {
+    color: #F0C5A8;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--terracota);
+    color: white;
+}
+
+.button-primary:hover {
+    background: var(--terracota-escuro);
+}
+
+/* Introdução histórica */
+
+.intro {
+    background: var(--bege);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.intro-grid p {
+    margin-bottom: 16px;
+}
+
+.intro-highlight {
+    background: var(--bege-claro);
+    padding: 38px;
+    border-left: 4px solid var(--terracota);
+}
+
+.highlight-number {
+    display: block;
+    color: var(--terracota);
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+}
+
+.intro-highlight h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+/* Títulos das seções */
+
+.section-heading {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto 48px;
+}
+
+.section-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Etapas da pesquisa */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    padding: 28px 24px;
+    background: var(--bege);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.step-number {
+    display: inline-block;
+    color: var(--terracota);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.step-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    font-size: 0.94rem;
+}
+
+/* Acervos e instituições */
+
+.archives {
+    background: var(--bege);
+}
+
+.archives-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.archive-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    background: var(--bege-claro);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.archive-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(68, 53, 45, 0.08);
+}
+
+.archive-category {
+    color: var(--terracota);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.archive-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.archive-card p {
+    font-size: 0.94rem;
+    margin-bottom: 22px;
+}
+
+.archive-card a {
+    margin-top: auto;
+    color: var(--terracota);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.archive-card a:hover {
+    color: var(--terracota-escuro);
+    text-decoration: underline;
+}
+
+.source-note {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Chamada de memória */
+
+.memory {
+    background:
+        linear-gradient(rgba(91, 49, 36, 0.88), rgba(91, 49, 36, 0.88)),
+        url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1800&q=85') center / cover;
+    color: white;
+    text-align: center;
+}
+
+.memory-content {
+    max-width: 760px;
+}
+
+.memory h2 {
+    margin-top: 18px;
+}
+
+.memory p {
+    color: #F2E4DA;
+    margin-bottom: 28px;
+}
+
+.button-light {
+    background: var(--bege-claro);
+    color: var(--terracota-escuro);
+}
+
+.button-light:hover {
+    background: var(--bege);
+}
+
+/* Sobre o projeto */
+
+.about-content {
+    max-width: 780px;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 16px;
+}
+
+/* Rodapé */
+
+.footer {
+    background: #352820;
+    color: white;
+    padding: 38px 0;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.footer p {
+    color: #E5D6C9;
+    margin-bottom: 8px;
+}
+
+.footer span {
+    color: #BDA99A;
+    font-size: 0.82rem;
+}
+
+.feedback {
+    background-color: #f2e9dc;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.feedback h2 {
+    color: #75432f;
+    margin-bottom: 15px;
+}
+
+.feedback p {
+    color: #654f41;
+    margin-bottom: 25px;
+}
+
+.btn-feedback {
+    display: inline-block;
+    background-color: #a65f43;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-feedback:hover {
+    background-color: #75432f;
+}
+
+.feedback small {
+    display: block;
+    margin-top: 18px;
+    color: #654f41;
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+    .nav {
+        gap: 14px;
+    }
+
+    .nav a {
+        font-size: 0.82rem;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .archives-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .header-content {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 20px 5%;
+        background: var(--bege-claro);
+        border-bottom: 1px solid var(--borda);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .steps-grid,
+    .archives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 64px 0;
+    }
+
+    .intro-highlight {
+        padding: 28px;
+    }
+}
